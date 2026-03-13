@@ -1,4 +1,4 @@
-<section class="cta-section">
+<section class="cta-section" id="contact">
   <div class="cta-container">
     <div class="cta-panel">
       <p class="font-accent cta-kicker">Ready when you are</p>

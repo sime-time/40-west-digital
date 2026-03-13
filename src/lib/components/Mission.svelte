@@ -1,6 +1,6 @@
-<section id="about" class="about-section">
-  <div class="about-container">
-    <div class="about-content">
+<section id="mission" class="mission-section">
+  <div class="mission-container">
+    <div class="mission-content">
       <p class="font-accent eyebrow">About our youth program</p>
       <h2 class="font-display section-title">
         Young creators. Real client work.
@@ -19,7 +19,7 @@
     </div>
 
     <div
-      class="about-visual"
+      class="mission-visual"
       role="img"
       aria-label="Student cohort group photo placeholder"
     >
@@ -31,12 +31,12 @@
 </section>
 
 <style>
-  .about-section {
+  .mission-section {
     background-color: var(--surface-container-low);
     padding: var(--space-24) 0;
   }
 
-  .about-container {
+  .mission-container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 5%;
@@ -46,7 +46,7 @@
     align-items: center;
   }
 
-  .about-content {
+  .mission-content {
     max-width: 620px;
   }
 
@@ -70,7 +70,7 @@
     max-width: 58ch;
   }
 
-  .about-visual {
+  .mission-visual {
     justify-self: stretch;
   }
 
@@ -96,12 +96,12 @@
   }
 
   @media (min-width: 1024px) {
-    .about-container {
+    .mission-container {
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
       gap: var(--space-16);
     }
 
-    .about-visual {
+    .mission-visual {
       justify-self: end;
       width: min(560px, 100%);
     }

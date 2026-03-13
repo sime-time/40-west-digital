@@ -17,7 +17,7 @@
     <!-- Desktop Nav -->
     <nav class="desktop-nav">
       <a href="#portfolio" class="nav-link font-medium">Portfolio</a>
-      <a href="#about" class="nav-link font-medium">Mission</a>
+      <a href="#mission" class="nav-link font-medium">Mission</a>
       <a href="#contact" class="nav-link font-medium">Contact</a>
     </nav>
 
@@ -59,9 +59,6 @@
       >
       <a href="#mission" class="mobile-link font-medium" onclick={toggleMenu}
         >Mission</a
-      >
-      <a href="#about" class="mobile-link font-medium" onclick={toggleMenu}
-        >About</a
       >
       <a href="#contact" class="mobile-link font-medium" onclick={toggleMenu}
         >Contact</a
