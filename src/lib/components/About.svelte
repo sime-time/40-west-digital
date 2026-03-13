@@ -10,7 +10,12 @@
         caring mentors and work on real projects for local businesses. Every
         project builds job skills, confidence, and a path to paid creative work.
       </p>
-      <a href="#contact" class="btn-primary">Book a meeting</a>
+      <a
+        href="https://www.mlkcenterindy.org/our-programs/youth-programs/40-west-digital"
+        class="btn-primary"
+      >
+        Learn More
+      </a>
     </div>
 
     <div
