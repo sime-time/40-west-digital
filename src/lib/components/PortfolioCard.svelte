@@ -1,21 +1,16 @@
 <script lang="ts">
-  let { video } = $props<{
-    video: {
-      image: string;
-      title: string;
-    };
+  import type { PortfolioVideo } from "$lib/utils/video";
+
+  let { video, onOpen } = $props<{
+    video: PortfolioVideo;
+    onOpen: (video: PortfolioVideo) => void;
   }>();
 </script>
 
-<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-<!-- svelte-ignore a11y_click_events_have_key_events -->
-<article
-  class="work-card"
-  onclick={() => console.log('Open video modal', video.title)}
->
+<button type="button" class="portfolio-card" onclick={() => onOpen(video)}>
   <!-- Background Color applied here for blend mode -->
   <div class="card-image-wrapper">
-    <img src={video.image} alt={video.title} class="work-image">
+    <img src={video.thumbnail} alt={video.title} class="portfolio-image">
     <div class="blend-overlay"></div>
   </div>
 
@@ -41,11 +36,11 @@
   <div class="card-content">
     <h3 class="font-body card-title">{video.title}</h3>
   </div>
-</article>
+</button>
 
 <style>
   /* The Card */
-  .work-card {
+  .portfolio-card {
     position: relative;
     width: 100%;
     /* 16:9 Aspect Ratio roughly */
@@ -62,7 +57,7 @@
       box-shadow 0.4s ease;
   }
 
-  .work-card:hover {
+  .portfolio-card:hover {
     transform: scale(1.02);
     box-shadow: 0 15px 50px rgba(28, 27, 27, 0.1);
   }
@@ -85,11 +80,11 @@
   }
 
   /* Slightly brighten on hover to emphasize interactivity */
-  .work-card:hover .card-image-wrapper {
+  .portfolio-card:hover .card-image-wrapper {
     background-color: rgba(155, 17, 17, 0.6); /* --primary-container #9B1111 */
   }
 
-  .work-image {
+  .portfolio-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -132,7 +127,7 @@
       transform 0.3s ease;
   }
 
-  .work-card:hover .play-button-container {
+  .portfolio-card:hover .play-button-container {
     opacity: 1;
     transform: translateY(0);
   }

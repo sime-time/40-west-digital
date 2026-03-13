@@ -16,9 +16,8 @@
 
     <!-- Desktop Nav -->
     <nav class="desktop-nav">
-      <a href="#work" class="nav-link font-medium">Work</a>
-      <a href="#mission" class="nav-link font-medium">Mission</a>
-      <a href="#about" class="nav-link font-medium">About</a>
+      <a href="#portfolio" class="nav-link font-medium">Portfolio</a>
+      <a href="#about" class="nav-link font-medium">Mission</a>
       <a href="#contact" class="nav-link font-medium">Contact</a>
     </nav>
 
@@ -55,8 +54,8 @@
   <!-- Mobile Nav Dropdown -->
   {#if isMobileMenuOpen}
     <nav class="mobile-nav">
-      <a href="#work" class="mobile-link font-medium" onclick={toggleMenu}
-        >Work</a
+      <a href="#portfolio" class="mobile-link font-medium" onclick={toggleMenu}
+        >Portfolio</a
       >
       <a href="#mission" class="mobile-link font-medium" onclick={toggleMenu}
         >Mission</a
