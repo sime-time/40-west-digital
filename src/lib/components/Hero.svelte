@@ -90,30 +90,6 @@
     align-items: center;
   }
 
-  .btn-primary {
-    display: inline-block;
-    color: var(--on-primary);
-    font-family: "Plus Jakarta Sans Variable", sans-serif;
-    font-weight: 500;
-    font-size: 1.125rem;
-    padding: var(--space-4) var(--space-8);
-    border-radius: var(--radius-md);
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-    /* Subtle gradient to inject soul */
-    background: linear-gradient(
-      135deg,
-      var(--primary) 0%,
-      var(--primary-container) 100%
-    );
-  }
-
-  .btn-primary:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-glow);
-  }
-
   /* Visuals - Film Strip */
   .hero-visuals {
     position: relative;
