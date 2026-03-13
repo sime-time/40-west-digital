@@ -1,7 +1,4 @@
 <script lang="ts">
-  import img1 from "$lib/assets/our-portfolio/butler-reading.png";
-  import img2 from "$lib/assets/our-portfolio/dads-to-doulas.png";
-  import img3 from "$lib/assets/our-portfolio/toy-pit.png";
   import { type PortfolioVideo, toYouTubeEmbedUrl } from "$lib/utils/video";
   import PortfolioCard from "./PortfolioCard.svelte";
   import VideoModal from "./VideoModal.svelte";
@@ -9,23 +6,52 @@
   const videos: PortfolioVideo[] = [
     {
       id: 1,
-      thumbnail: img1,
+      thumbnail: "/uploads/portfolio/butler-reading.webp",
       title: "Butler Blueprint for Learning",
       videoUrl: "https://youtu.be/wTOMVvmCFGI",
     },
     {
       id: 2,
-      thumbnail: img2,
+      thumbnail: "/uploads/portfolio/dads-to-doulas.webp",
       title: "Dear Fathers",
       videoUrl: "https://youtu.be/D1WRuihA6Ig",
     },
     {
       id: 3,
-      thumbnail: img3,
+      thumbnail: "/uploads/portfolio/toy-pit.webp",
       title: "The Toy Pit",
       videoUrl: "https://youtu.be/kWohK4Mmr0Y",
     },
+    {
+      id: 4,
+      thumbnail: "/uploads/portfolio/lay-clergy.webp",
+      title: "Lay Clergy",
+      videoUrl: "https://youtu.be/guWihKLaTzo",
+    },
+    {
+      id: 5,
+      thumbnail: "/uploads/portfolio/this-is-us.webp",
+      title: "This Is Us",
+      videoUrl: "https://youtu.be/pUvlxfaRujU",
+    },
+    {
+      id: 6,
+      thumbnail: "/uploads/portfolio/womens-fund.webp",
+      title: "Women's Fund",
+      videoUrl: "https://youtu.be/nPRHkQwVnUA",
+    },
   ];
+
+  const INITIAL_VISIBLE_COUNT = 3;
+
+  let showAll = $state(false);
+  let gridContainer: HTMLDivElement | null = null;
+
+  const visibleVideos = $derived(
+    showAll ? videos : videos.slice(0, INITIAL_VISIBLE_COUNT),
+  );
+
+  const canToggleVideos = $derived(videos.length > INITIAL_VISIBLE_COUNT);
 
   let selectedVideo = $state<PortfolioVideo | null>(null);
   let selectedEmbedUrl = $state<string | null>(null);
@@ -46,6 +72,23 @@
   function handleCloseVideo() {
     selectedVideo = null;
     selectedEmbedUrl = null;
+  }
+
+  function toggleVisibleVideos() {
+    const wasExpanded = showAll;
+    showAll = !showAll;
+
+    if (!wasExpanded) {
+      return;
+    }
+
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      gridContainer?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   }
 
   $effect(() => {
@@ -74,13 +117,25 @@
       </h2>
     </div>
 
-    <div class="grid-container">
+    <div class="grid-container" bind:this={gridContainer}>
       <div class="grid-track">
-        {#each videos as video (video.id)}
+        {#each visibleVideos as video (video.id)}
           <PortfolioCard {video} onOpen={handleOpenVideo} />
         {/each}
       </div>
     </div>
+
+    {#if canToggleVideos}
+      <div class="toggle-wrap">
+        <button
+          type="button"
+          class="toggle-button font-medium"
+          onclick={toggleVisibleVideos}
+        >
+          {showAll ? "Show less" : "Show more"}
+        </button>
+      </div>
+    {/if}
   </div>
 
   <VideoModal
@@ -124,6 +179,25 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-6);
+  }
+
+  .toggle-wrap {
+    margin-top: var(--space-10);
+    display: flex;
+    justify-content: center;
+  }
+
+  .toggle-button {
+    color: var(--primary-container);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3rem;
+    font-size: 1.05rem;
+    transition: transform 0.2s ease;
+  }
+
+  .toggle-button:hover {
+    transform: scale(1.02);
   }
 
   @media (min-width: 768px) {
