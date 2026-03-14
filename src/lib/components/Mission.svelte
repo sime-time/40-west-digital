@@ -21,7 +21,7 @@
     <div class="mission-visual">
       <img
         class="mission-photo"
-        src="/uploads/photos/group-photo.webp"
+        src="/images/photos/group-photo.webp"
         alt="40 West Digital youth program cohort outside the MLK Center"
       >
     </div>

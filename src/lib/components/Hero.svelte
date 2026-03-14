@@ -25,21 +25,21 @@
         <div class="film-card card-1">
           <img
             class="film-image"
-            src="/uploads/photos/guy-filming.webp"
+            src="/images/photos/guy-filming.webp"
             alt="Student operating a cinema camera during an interview setup"
           >
         </div>
         <div class="film-card card-2">
           <img
             class="film-image"
-            src="/uploads/photos/working-together.webp"
+            src="/images/photos/working-together.webp"
             alt="Mentor and students reviewing edits together at a workstation"
           >
         </div>
         <div class="film-card card-3">
           <img
             class="film-image"
-            src="/uploads/photos/sound-guy.webp"
+            src="/images/photos/sound-guy.webp"
             alt="Student capturing clean audio with a boom microphone"
           >
         </div>

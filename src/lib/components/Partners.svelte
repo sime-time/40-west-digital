@@ -8,27 +8,27 @@
   const logos: PartnerLogo[] = [
     {
       id: "butler",
-      src: "/uploads/logos/butler-university-logo.webp",
+      src: "/images/logos/butler-university-logo.webp",
       alt: "Butler University",
     },
     {
       id: "dear-fathers",
-      src: "/uploads/logos/dear-fathers-logo.webp",
+      src: "/images/logos/dear-fathers-logo.webp",
       alt: "Dear Fathers",
     },
     {
       id: "jack-daniels",
-      src: "/uploads/logos/jack-daniels-logo.webp",
+      src: "/images/logos/jack-daniels-logo.webp",
       alt: "Jack Daniel's",
     },
     {
       id: "planned-parenthood",
-      src: "/uploads/logos/planned-parenthood-logo.webp",
+      src: "/images/logos/planned-parenthood-logo.webp",
       alt: "Planned Parenthood",
     },
     {
       id: "united-way",
-      src: "/uploads/logos/united-way-logo.webp",
+      src: "/images/logos/united-way-logo.webp",
       alt: "United Way",
     },
   ];
