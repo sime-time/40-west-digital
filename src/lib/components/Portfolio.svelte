@@ -6,25 +6,25 @@
   const videos: PortfolioVideo[] = [
     {
       id: 1,
-      thumbnail: "/uploads/portfolio/butler-reading.webp",
+      thumbnail: "/uploads/thumbnails/butler-reading.webp",
       title: "Butler Blueprint for Learning",
       videoUrl: "https://youtu.be/wTOMVvmCFGI",
     },
     {
       id: 2,
-      thumbnail: "/uploads/portfolio/dads-to-doulas.webp",
+      thumbnail: "/uploads/thumbnails/dads-to-doulas.webp",
       title: "Dear Fathers",
       videoUrl: "https://youtu.be/D1WRuihA6Ig",
     },
     {
       id: 3,
-      thumbnail: "/uploads/portfolio/toy-pit.webp",
+      thumbnail: "/uploads/thumbnails/toy-pit.webp",
       title: "The Toy Pit",
       videoUrl: "https://youtu.be/kWohK4Mmr0Y",
     },
     {
       id: 4,
-      thumbnail: "/uploads/portfolio/lay-clergy.webp",
+      thumbnail: "/uploads/thumbnails/lay-clergy.webp",
       title: "Lay Clergy",
       videoUrl: "https://youtu.be/guWihKLaTzo",
     },

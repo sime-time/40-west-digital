@@ -14,18 +14,16 @@
         href="https://www.mlkcenterindy.org/our-programs/youth-programs/40-west-digital"
         class="btn-primary"
       >
-        Learn More
+        Learn more
       </a>
     </div>
 
-    <div
-      class="mission-visual"
-      role="img"
-      aria-label="Student cohort group photo placeholder"
-    >
-      <div class="placeholder-photo">
-        <span class="placeholder-label">Student Cohort Group Photo</span>
-      </div>
+    <div class="mission-visual">
+      <img
+        class="mission-photo"
+        src="/uploads/photos/group-photo.webp"
+        alt="40 West Digital youth program cohort outside the MLK Center"
+      >
     </div>
   </div>
 </section>
@@ -74,25 +72,12 @@
     justify-self: stretch;
   }
 
-  .placeholder-photo {
+  .mission-photo {
     width: 100%;
-    min-height: 420px;
+    height: auto;
     border-radius: var(--radius-xl);
-    background:
-      linear-gradient(140deg, rgba(155, 17, 17, 0.2), rgba(116, 0, 5, 0.08)),
-      var(--surface);
     box-shadow: var(--shadow-glow);
-    display: grid;
-    place-items: center;
-    padding: var(--space-8);
-  }
-
-  .placeholder-label {
-    color: rgba(28, 27, 27, 0.72);
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-    letter-spacing: 0.02em;
+    display: block;
   }
 
   @media (min-width: 1024px) {
@@ -104,10 +89,6 @@
     .mission-visual {
       justify-self: end;
       width: min(560px, 100%);
-    }
-
-    .placeholder-photo {
-      min-height: 520px;
     }
   }
 </style>

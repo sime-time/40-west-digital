@@ -19,12 +19,30 @@
       </div>
     </div>
 
-    <!-- Right Column: Visuals (Film Strip Placeholders) -->
+    <!-- Right Column: Visuals (Film Strip) -->
     <div class="hero-visuals">
       <div class="film-strip">
-        <div class="film-card placeholder-1"></div>
-        <div class="film-card placeholder-2"></div>
-        <div class="film-card placeholder-3"></div>
+        <div class="film-card card-1">
+          <img
+            class="film-image"
+            src="/uploads/photos/guy-filming.webp"
+            alt="Student operating a cinema camera during an interview setup"
+          >
+        </div>
+        <div class="film-card card-2">
+          <img
+            class="film-image"
+            src="/uploads/photos/working-together.webp"
+            alt="Mentor and students reviewing edits together at a workstation"
+          >
+        </div>
+        <div class="film-card card-3">
+          <img
+            class="film-image"
+            src="/uploads/photos/sound-guy.webp"
+            alt="Student capturing clean audio with a boom microphone"
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -112,27 +130,33 @@
     flex: 0 0 300px;
     height: 480px; /* Uniform height */
     border-radius: var(--radius-xl);
+    overflow: hidden;
     background-color: var(--surface-container-low);
     box-shadow: var(--shadow-glow);
     transition: transform 0.4s ease;
   }
 
+  .film-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
   /* Asymmetrical staggering & coloring */
-  .film-card.placeholder-1 {
+  .film-card.card-1 {
     transform: translateY(var(--space-8));
-    background-color: #e2d9d5; /* Subtle tonal variation */
   }
 
-  .film-card.placeholder-2 {
+  .film-card.card-2 {
     transform: translateY(calc(var(--space-8) * -1));
-    background-color: #d5c9c4;
   }
 
-  .film-card.placeholder-3 {
+  .film-card.card-3 {
     transform: translateY(
       var(--space-8)
     ); /* Replaced from var(--space-16) to match placeholder-1 roughly, or keep staggered */
-    background-color: #c8b9b3;
   }
 
   .film-card:hover {
