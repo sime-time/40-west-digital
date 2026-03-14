@@ -15,7 +15,7 @@
       </h1>
 
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Start Your Project</a>
+        <a href="#contact" class="btn-primary">Start your project</a>
       </div>
     </div>
 

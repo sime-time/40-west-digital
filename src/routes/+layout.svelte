@@ -10,7 +10,7 @@
 
 <svelte:head>
   <link rel="icon" href={favicon}>
-  <title>40 West Digital | Cinematic Editorial</title>
+  <title>40 West Digital</title>
 </svelte:head>
 
 <Navbar />
