@@ -4,12 +4,12 @@
   const socialLinks = [
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/40WestDigital",
       icon: "mdi:facebook",
     },
     {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/40westdigital",
       icon: "mdi:instagram",
     },
   ];
