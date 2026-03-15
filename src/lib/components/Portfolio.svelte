@@ -6,37 +6,37 @@
   const videos: PortfolioVideo[] = [
     {
       id: 1,
-      thumbnail: "/uploads/thumbnails/butler-reading.webp",
+      thumbnail: "/images/thumbnails/butler-reading.webp",
       title: "Butler Blueprint for Learning",
       videoUrl: "https://youtu.be/wTOMVvmCFGI",
     },
     {
       id: 2,
-      thumbnail: "/uploads/thumbnails/dads-to-doulas.webp",
+      thumbnail: "/images/thumbnails/dads-to-doulas.webp",
       title: "Dear Fathers",
       videoUrl: "https://youtu.be/D1WRuihA6Ig",
     },
     {
       id: 3,
-      thumbnail: "/uploads/thumbnails/toy-pit.webp",
+      thumbnail: "/images/thumbnails/toy-pit.webp",
       title: "The Toy Pit",
       videoUrl: "https://youtu.be/kWohK4Mmr0Y",
     },
     {
       id: 4,
-      thumbnail: "/uploads/thumbnails/lay-clergy.webp",
+      thumbnail: "/images/thumbnails/lay-clergy.webp",
       title: "Lay Clergy",
       videoUrl: "https://youtu.be/guWihKLaTzo",
     },
     {
       id: 5,
-      thumbnail: "/uploads/portfolio/this-is-us.webp",
+      thumbnail: "/images/thumbnails/this-is-us.webp",
       title: "This Is Us",
       videoUrl: "https://youtu.be/pUvlxfaRujU",
     },
     {
       id: 6,
-      thumbnail: "/uploads/portfolio/womens-fund.webp",
+      thumbnail: "/images/thumbnails/womens-fund.webp",
       title: "Women's Fund",
       videoUrl: "https://youtu.be/nPRHkQwVnUA",
     },
