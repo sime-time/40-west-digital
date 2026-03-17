@@ -23,8 +23,7 @@
         Video production with purpose, powered by youth talent.
       </p>
       <p class="font-body footer-legal">
-        <Icon icon="mdi:copyright" width="16" height="16" />
-        <span>40 West Digital. All rights reserved.</span>
+        <span>&copy; 40 West Digital. All rights reserved.</span>
       </p>
     </div>
 
