@@ -7,7 +7,7 @@
         Tell us about your project. We review each request and invite qualified
         teams to book a meeting.
       </p>
-      <a href="#apply" class="btn-primary">Start your request</a>
+      <a href="/request" class="btn-primary">Start your request</a>
       <p class="font-body cta-microcopy">Takes about 2-3 minutes.</p>
     </div>
   </div>

@@ -18,7 +18,7 @@
     <nav class="desktop-nav">
       <a href="#portfolio" class="nav-link font-medium">Portfolio</a>
       <a href="#mission" class="nav-link font-medium">Mission</a>
-      <a href="#contact" class="nav-link font-medium">Contact</a>
+      <a href="/request" class="nav-link font-medium">Contact</a>
     </nav>
 
     <!-- Mobile Menu Toggle -->
