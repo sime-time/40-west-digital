@@ -7,9 +7,9 @@
     <!-- Left Column: Content -->
     <div class="hero-content">
       <h1 class="hero-title">
-        <span class="font-display title-main"
-          >Professional Video Production</span
-        >
+        <span class="font-display title-main">
+          Professional Video Production
+        </span>
         <br>
         <span class="font-accent title-accent">with Real Impact.</span>
       </h1>

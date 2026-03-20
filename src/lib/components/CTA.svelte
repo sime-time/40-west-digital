@@ -8,7 +8,6 @@
         teams to book a meeting.
       </p>
       <a href="/request" class="btn-primary">Start your request</a>
-      <p class="font-body cta-microcopy">Takes about 3-4 minutes.</p>
     </div>
   </div>
 </section>

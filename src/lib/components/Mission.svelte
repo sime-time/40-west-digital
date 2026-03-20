@@ -6,9 +6,10 @@
         Young creators. Real client work.
       </h2>
       <p class="font-body section-copy">
-        We teach teens how to plan, film, and edit videos. They learn from
-        caring mentors and work on real projects for local businesses. Every
-        project builds job skills, confidence, and a path to paid creative work.
+        We teach young adults how to plan, film, and edit videos. They learn
+        from caring mentors and work on real projects for local businesses.
+        Every project builds job skills, confidence, and a path to paid creative
+        work.
       </p>
       <a
         href="https://www.mlkcenterindy.org/our-programs/youth-programs/40-west-digital"
