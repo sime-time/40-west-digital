@@ -3,7 +3,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
   >
-  <title>40 West Digital Client Request</title>
+  <title>40 West Digital Request</title>
 </svelte:head>
 
 <iframe

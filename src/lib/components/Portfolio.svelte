@@ -42,16 +42,33 @@
     },
   ];
 
-  const INITIAL_VISIBLE_COUNT = 3;
+  let initialVisibleCount = $state(3);
+
+  // initial amount of portfolio videos depends on screen size
+  // tablets = 4, all other screen sizes = 3
+  $effect(() => {
+    if (typeof window === "undefined") return;
+    const mediumQuery = window.matchMedia(
+      "(min-width: 768px) and (max-width: 1023px)",
+    );
+    const updateVisibleCount = () => {
+      initialVisibleCount = mediumQuery.matches ? 4 : 3;
+    };
+    updateVisibleCount();
+    mediumQuery.addEventListener("change", updateVisibleCount);
+    return () => {
+      mediumQuery.removeEventListener("change", updateVisibleCount);
+    };
+  });
 
   let showAll = $state(false);
   let gridContainer: HTMLDivElement | null = null;
 
   const visibleVideos = $derived(
-    showAll ? videos : videos.slice(0, INITIAL_VISIBLE_COUNT),
+    showAll ? videos : videos.slice(0, initialVisibleCount),
   );
 
-  const canToggleVideos = $derived(videos.length > INITIAL_VISIBLE_COUNT);
+  const canToggleVideos = $derived(videos.length > initialVisibleCount);
 
   let selectedVideo = $state<PortfolioVideo | null>(null);
   let selectedEmbedUrl = $state<string | null>(null);

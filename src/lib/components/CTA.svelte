@@ -58,12 +58,6 @@
     line-height: 1.7;
   }
 
-  .cta-microcopy {
-    margin-top: var(--space-4);
-    color: rgba(28, 27, 27, 0.74);
-    font-size: 0.95rem;
-  }
-
   @media (max-width: 767px) {
     .cta-panel {
       padding: var(--space-10) var(--space-4);
