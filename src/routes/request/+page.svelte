@@ -1,3 +1,7 @@
+<script lang="ts">
+  let { data } = $props();
+</script>
+
 <svelte:head>
   <meta
     name="viewport"
@@ -8,8 +12,7 @@
 
 <iframe
   class="request-frame"
-  src="https://app.youform.com/forms/qawca60r"
-  loading="lazy"
+  src={data.youFormLink}
   title="40 West Digital Client Request"
   referrerpolicy="no-referrer-when-downgrade"
 ></iframe>

@@ -28,5 +28,9 @@ export async function load() {
     client.single("request-form").find(),
   ]);
 
-  return { global, header, footer, requestForm };
+  // flatten the request form data
+  const youFormLink =
+    requestForm?.data?.YouFormLink ?? "https://app.youform.com/forms/qawca60r";
+
+  return { global, header, footer, youFormLink };
 }
