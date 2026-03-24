@@ -5,7 +5,7 @@
   import "../app.css";
   import Navbar from "$lib/components/Navbar.svelte";
 
-  let { children } = $props();
+  let { data, children } = $props();
 </script>
 
 <svelte:head>
@@ -13,6 +13,6 @@
   <title>40 West Digital</title>
 </svelte:head>
 
-<Navbar />
+<Navbar data={data.header.data} />
 
 <main>{@render children()}</main>

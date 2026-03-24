@@ -124,3 +124,16 @@ button {
   transform: scale(1.02);
   box-shadow: var(--shadow-glow);
 }
+
+.nav-link {
+  font-size: 1rem;
+  color: var(--on-surface);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-container);
+  transform: scale(1.02);
+}

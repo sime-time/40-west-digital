@@ -1,51 +1,18 @@
 <script lang="ts">
-  type PartnerLogo = {
-    id: string;
-    src: string;
-    alt: string;
-  };
+  import { PUBLIC_STRAPI_URL } from "$env/static/public";
 
-  const logos: PartnerLogo[] = [
-    {
-      id: "butler",
-      src: "/images/logos/butler-university-logo.webp",
-      alt: "Butler University",
-    },
-    {
-      id: "dear-fathers",
-      src: "/images/logos/dear-fathers-logo.webp",
-      alt: "Dear Fathers",
-    },
-    {
-      id: "jack-daniels",
-      src: "/images/logos/jack-daniels-logo.webp",
-      alt: "Jack Daniel's",
-    },
-    {
-      id: "planned-parenthood",
-      src: "/images/logos/planned-parenthood-logo.webp",
-      alt: "Planned Parenthood",
-    },
-    {
-      id: "united-way",
-      src: "/images/logos/united-way-logo.webp",
-      alt: "United Way",
-    },
-  ];
+  let { data } = $props();
 </script>
 
 <section class="partners-section" aria-label="Partner logos">
   <div class="partners-container">
     <ul class="partners-list" role="list">
-      {#each logos as logo}
-        <li
-          class="partner-item"
-          class:partner-item--jack={logo.id === "jack-daniels"}
-        >
+      {#each data.partnerLogos as logo}
+        <li class="partner-item">
           <img
             class="partner-logo"
-            src={logo.src}
-            alt={logo.alt}
+            src={`${PUBLIC_STRAPI_URL}${logo.url}`}
+            alt={logo.name}
             loading="lazy"
             decoding="async"
           >

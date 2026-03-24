@@ -2,8 +2,6 @@
   import { PUBLIC_STRAPI_URL } from "$env/static/public";
 
   let { data } = $props();
-
-  $effect(() => console.log(data));
 </script>
 
 <section class="hero-section">

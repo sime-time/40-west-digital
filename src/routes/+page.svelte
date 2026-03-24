@@ -11,8 +11,8 @@
 </script>
 
 <Hero data={data.hero.data} />
-<Partners />
-<Portfolio />
+<Partners data={data.partnerBanner.data} />
+<Portfolio data={data.portfolio.data} />
 <Mission />
 <CTA />
 <Footer />

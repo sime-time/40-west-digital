@@ -1,5 +1,7 @@
 <script lang="ts">
-  import logo from "$lib/assets/40westdigital.png";
+  import { PUBLIC_STRAPI_URL } from "$env/static/public";
+
+  let { data } = $props();
 
   let isMobileMenuOpen = $state(false);
 
@@ -11,14 +13,22 @@
 <header class="navbar">
   <div class="nav-container">
     <a href="/" class="logo-link">
-      <img src={logo} alt="40 West Digital Logo" class="logo-img">
+      <img
+        src={`${PUBLIC_STRAPI_URL}${data.logo.url}`}
+        alt="40 West Digital Logo"
+        class="logo-img"
+      >
     </a>
 
     <!-- Desktop Nav -->
     <nav class="desktop-nav">
-      <a href="/#portfolio" class="nav-link font-medium">Portfolio</a>
-      <a href="/#mission" class="nav-link font-medium">Mission</a>
-      <a href="/request" class="nav-link font-medium">Contact</a>
+      {#each data.navigationLinks as navLink}
+        <a
+          href={navLink.href}
+          class={navLink.isButton ? "btn-primary" : "nav-link font-medium"}
+          >{navLink.label}</a
+        >
+      {/each}
     </nav>
 
     <!-- Mobile Menu Toggle -->
@@ -54,15 +64,13 @@
   <!-- Mobile Nav Dropdown -->
   {#if isMobileMenuOpen}
     <nav class="mobile-nav">
-      <a href="#portfolio" class="mobile-link font-medium" onclick={toggleMenu}
-        >Portfolio</a
-      >
-      <a href="#mission" class="mobile-link font-medium" onclick={toggleMenu}
-        >Mission</a
-      >
-      <a href="#contact" class="mobile-link font-medium" onclick={toggleMenu}
-        >Contact</a
-      >
+      {#each data.navigationLinks as navLink}
+        <a
+          href={navLink.href}
+          class={navLink.isButton ? "btn-primary" : "mobile-link font-medium"}
+          >{navLink.label}</a
+        >
+      {/each}
     </nav>
   {/if}
 </header>

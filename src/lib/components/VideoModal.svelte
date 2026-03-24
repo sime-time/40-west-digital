@@ -1,8 +1,8 @@
 <script lang="ts">
-  let { isOpen, title, videoUrl, onClose } = $props<{
+  let { isOpen, title, youtubeLink, onClose } = $props<{
     isOpen: boolean;
     title: string;
-    videoUrl: string | null;
+    youtubeLink: string | null;
     onClose: () => void;
   }>();
 
@@ -19,7 +19,7 @@
 
 <svelte:window onkeydown={handleWindowKeydown} />
 
-{#if isOpen && videoUrl}
+{#if isOpen && youtubeLink}
   <div class="modal-overlay" role="presentation">
     <button
       type="button"
@@ -57,7 +57,7 @@
 
       <div class="video-frame">
         <iframe
-          src={videoUrl}
+          src={youtubeLink}
           title="YouTube video player"
           loading="lazy"
           allow="

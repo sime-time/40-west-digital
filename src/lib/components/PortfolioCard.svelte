@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { PUBLIC_STRAPI_URL } from "$env/static/public";
   import type { PortfolioVideo } from "$lib/utils/video";
 
   let { video, onOpen } = $props<{
@@ -10,7 +11,11 @@
 <button type="button" class="portfolio-card" onclick={() => onOpen(video)}>
   <!-- Background Color applied here for blend mode -->
   <div class="card-image-wrapper">
-    <img src={video.thumbnail} alt={video.title} class="portfolio-image">
+    <img
+      src={`${PUBLIC_STRAPI_URL}${video.thumbnail.url}`}
+      alt={video.title}
+      class="portfolio-image"
+    >
     <div class="blend-overlay"></div>
   </div>
 

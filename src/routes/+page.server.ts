@@ -25,7 +25,12 @@ export async function load() {
     }),
     client.single("portfolio").find({
       populate: {
-        portfolioVideo: true,
+        portfolioVideo: {
+          fields: ["title", "youtubeLink"],
+          populate: {
+            thumbnail: true,
+          },
+        },
       },
     }),
     client.single("mission").find({

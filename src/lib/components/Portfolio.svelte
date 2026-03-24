@@ -3,44 +3,9 @@
   import PortfolioCard from "./PortfolioCard.svelte";
   import VideoModal from "./VideoModal.svelte";
 
-  const videos: PortfolioVideo[] = [
-    {
-      id: 1,
-      thumbnail: "/images/thumbnails/butler-reading.webp",
-      title: "Butler Blueprint for Learning",
-      videoUrl: "https://youtu.be/wTOMVvmCFGI",
-    },
-    {
-      id: 2,
-      thumbnail: "/images/thumbnails/dads-to-doulas.webp",
-      title: "Dear Fathers",
-      videoUrl: "https://youtu.be/D1WRuihA6Ig",
-    },
-    {
-      id: 3,
-      thumbnail: "/images/thumbnails/toy-pit.webp",
-      title: "The Toy Pit",
-      videoUrl: "https://youtu.be/kWohK4Mmr0Y",
-    },
-    {
-      id: 4,
-      thumbnail: "/images/thumbnails/lay-clergy.webp",
-      title: "Lay Clergy",
-      videoUrl: "https://youtu.be/guWihKLaTzo",
-    },
-    {
-      id: 5,
-      thumbnail: "/images/thumbnails/this-is-us.webp",
-      title: "This Is Us",
-      videoUrl: "https://youtu.be/pUvlxfaRujU",
-    },
-    {
-      id: 6,
-      thumbnail: "/images/thumbnails/womens-fund.webp",
-      title: "Women's Fund",
-      videoUrl: "https://youtu.be/nPRHkQwVnUA",
-    },
-  ];
+  let { data } = $props();
+
+  let videos = $derived<PortfolioVideo[]>(data.portfolioVideo ?? []);
 
   let initialVisibleCount = $state(3);
 
@@ -65,10 +30,14 @@
   let gridContainer: HTMLDivElement | null = null;
 
   const visibleVideos = $derived(
-    showAll ? videos : videos.slice(0, initialVisibleCount),
+    showAll
+      ? data.portfolioVideo
+      : data.portfolioVideo.slice(0, initialVisibleCount),
   );
 
-  const canToggleVideos = $derived(videos.length > initialVisibleCount);
+  const canToggleVideos = $derived(
+    data.portfolioVideo.length > initialVisibleCount,
+  );
 
   let selectedVideo = $state<PortfolioVideo | null>(null);
   let selectedEmbedUrl = $state<string | null>(null);
@@ -76,7 +45,7 @@
   const isModalOpen = $derived(Boolean(selectedVideo && selectedEmbedUrl));
 
   function handleOpenVideo(video: PortfolioVideo) {
-    const embedUrl = toYouTubeEmbedUrl(video.videoUrl);
+    const embedUrl = toYouTubeEmbedUrl(video.youtubeLink);
 
     if (!embedUrl) {
       return;
@@ -136,7 +105,7 @@
 
     <div class="grid-container" bind:this={gridContainer}>
       <div class="grid-track">
-        {#each visibleVideos as video (video.id)}
+        {#each visibleVideos as video}
           <PortfolioCard {video} onOpen={handleOpenVideo} />
         {/each}
       </div>
@@ -158,7 +127,7 @@
   <VideoModal
     isOpen={isModalOpen}
     title={selectedVideo?.title ?? ""}
-    videoUrl={selectedEmbedUrl}
+    youtubeLink={selectedEmbedUrl}
     onClose={handleCloseVideo}
   />
 </section>

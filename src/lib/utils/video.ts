@@ -1,8 +1,9 @@
 export type PortfolioVideo = {
-  id: number;
-  thumbnail: string;
+  thumbnail: {
+    url: string;
+  };
   title: string;
-  videoUrl: string;
+  youtubeLink: string;
 };
 
 function isYouTubeHost(hostname: string): boolean {
