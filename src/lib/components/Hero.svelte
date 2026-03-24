@@ -15,7 +15,10 @@
       </h1>
 
       <div class="hero-actions">
-        <a href={data.primaryButtonLink.href} class="btn-primary">
+        <a
+          href={data.primaryButtonLink.href}
+          class={data.primaryButtonLink.isButton ? "btn-primary" : "nav-link font-medium"}
+        >
           {data.primaryButtonLink.label}
         </a>
       </div>

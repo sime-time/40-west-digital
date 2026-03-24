@@ -1,42 +1,52 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
 
-  const socialLinks = [
-    {
-      name: "Facebook",
-      href: "https://www.facebook.com/40WestDigital",
-      icon: "mdi:facebook",
-    },
-    {
-      name: "Instagram",
-      href: "https://www.instagram.com/40westdigital",
-      icon: "mdi:instagram",
-    },
-  ];
+  type LogoType = "facebook" | "instagram" | "tiktok" | "youtube" | "twitter";
+
+  type FooterData = {
+    copyrightText: string;
+    socialLinks: Array<{
+      id: number;
+      logoType: LogoType;
+      profileLink: string;
+    }>;
+  };
+
+  type GlobalData = {
+    title: string;
+    description: string;
+  };
+  let { data, global }: { data: FooterData; global: GlobalData } = $props();
+
+  const mediaIcon: Record<LogoType, string> = {
+    facebook: "mdi:facebook",
+    instagram: "mdi:instagram",
+    tiktok: "ic:baseline-tiktok",
+    youtube: "mdi:youtube",
+    twitter: "bi:twitter-x",
+  };
 </script>
 
 <footer id="contact" class="footer-section">
   <div class="footer-container">
     <div class="footer-brand">
-      <h2 class="font-display footer-title">40 West Digital</h2>
-      <p class="font-body footer-copy">
-        Video production with purpose, powered by youth talent.
-      </p>
+      <h2 class="font-display footer-title">{global.title}</h2>
+      <p class="font-body footer-copy">{global.description}</p>
       <p class="font-body footer-legal">
-        <span>&copy; 40 West Digital. All rights reserved.</span>
+        <span>&copy; {data.copyrightText}</span>
       </p>
     </div>
 
     <div class="footer-socials" aria-label="Social media links">
-      {#each socialLinks as social (social.name)}
+      {#each data.socialLinks as social}
         <a
           class="social-link"
-          href={social.href}
-          aria-label={social.name}
+          href={social.profileLink}
+          aria-label={social.logoType}
           target="_blank"
           rel="noreferrer"
         >
-          <Icon icon={social.icon} width="30" height="30" />
+          <Icon icon={mediaIcon[social.logoType]} width="30" height="30" />
         </a>
       {/each}
     </div>

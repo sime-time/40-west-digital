@@ -13,6 +13,6 @@
 <Hero data={data.hero.data} />
 <Partners data={data.partnerBanner.data} />
 <Portfolio data={data.portfolio.data} />
-<Mission />
-<CTA />
-<Footer />
+<Mission data={data.mission.data} />
+<CTA data={data.cta.data} />
+<Footer data={data.footer.data} global={data.global.data} />

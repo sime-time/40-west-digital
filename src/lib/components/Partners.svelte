@@ -71,10 +71,6 @@
     transform: translateY(-2px) scale(var(--logo-scale));
   }
 
-  .partner-item--jack .partner-logo {
-    --logo-scale: 1.45;
-  }
-
   @media (min-width: 768px) {
     .partners-section {
       padding: var(--space-12) 0;

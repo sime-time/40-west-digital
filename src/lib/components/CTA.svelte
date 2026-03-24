@@ -1,13 +1,18 @@
+<script lang="ts">
+  let { data } = $props();
+</script>
+
 <section class="cta-section" id="contact">
   <div class="cta-container">
     <div class="cta-panel">
-      <p class="font-accent cta-kicker">Ready when you are</p>
-      <h2 class="font-display cta-title">Need a video for your business?</h2>
-      <p class="font-body cta-support">
-        Tell us about your project. We review each request and invite qualified
-        teams to book a meeting.
-      </p>
-      <a href="/request" class="btn-primary">Start your request</a>
+      <p class="font-accent cta-kicker">{data.subheading}</p>
+      <h2 class="font-display cta-title">{data.heading}</h2>
+      <p class="font-body cta-support">{data.description}</p>
+      <a
+        href={data.buttonLink.href}
+        class={data.buttonLink.isButton ? "btn-primary" : "nav-link font-medium"}
+        >{data.buttonLink.label}</a
+      >
     </div>
   </div>
 </section>

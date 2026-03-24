@@ -12,7 +12,6 @@ export async function load() {
     client.single("hero").find({
       populate: {
         primaryButtonLink: true,
-        secondaryButtonLink: true,
         image1: true,
         image2: true,
         image3: true,

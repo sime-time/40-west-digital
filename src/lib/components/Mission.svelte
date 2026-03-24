@@ -1,28 +1,27 @@
+<script lang="ts">
+  import { PUBLIC_STRAPI_URL } from "$env/static/public";
+
+  let { data } = $props();
+</script>
+
 <section id="mission" class="mission-section">
   <div class="mission-container">
     <div class="mission-content">
-      <p class="font-accent eyebrow">About our youth program</p>
-      <h2 class="font-display section-title">
-        Young creators. Real client work.
-      </h2>
-      <p class="font-body section-copy">
-        We teach young adults how to plan, film, and edit videos. They learn
-        from caring mentors and work on real projects for local businesses.
-        Every project builds job skills, confidence, and a path to paid creative
-        work.
-      </p>
+      <p class="font-accent eyebrow">{data.subheading}</p>
+      <h2 class="font-display section-title">{data.heading}</h2>
+      <p class="font-body section-copy">{data.description}</p>
       <a
-        href="https://www.mlkcenterindy.org/our-programs/youth-programs/40-west-digital"
-        class="btn-primary"
+        href={data.buttonLink.href}
+        class={data.buttonLink.isButton ? "btn-primary" : "nav-link font-medium"}
       >
-        Learn more
+        {data.buttonLink.label}
       </a>
     </div>
 
     <div class="mission-visual">
       <img
         class="mission-photo"
-        src="/images/photos/group-photo.webp"
+        src={`${PUBLIC_STRAPI_URL}${data.image.url}`}
         alt="40 West Digital youth program cohort outside the MLK Center"
       >
     </div>
