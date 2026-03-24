@@ -1,5 +1,9 @@
 <script lang="ts">
-  // Using some inline variables or state if needed, but CSS handles visuals mostly
+  import { PUBLIC_STRAPI_URL } from "$env/static/public";
+
+  let { data } = $props();
+
+  $effect(() => console.log(data));
 </script>
 
 <section class="hero-section">
@@ -7,15 +11,15 @@
     <!-- Left Column: Content -->
     <div class="hero-content">
       <h1 class="hero-title">
-        <span class="font-display title-main">
-          Professional Video Production
-        </span>
+        <span class="font-display title-main"> {data.heading} </span>
         <br>
-        <span class="font-accent title-accent">with Real Impact.</span>
+        <span class="font-accent title-accent"> {data.headingEmphasis} </span>
       </h1>
 
       <div class="hero-actions">
-        <a href="/request" class="btn-primary">Start your project</a>
+        <a href={data.primaryButtonLink.href} class="btn-primary">
+          {data.primaryButtonLink.label}
+        </a>
       </div>
     </div>
 
@@ -25,21 +29,21 @@
         <div class="film-card card-1">
           <img
             class="film-image"
-            src="/images/photos/guy-filming.webp"
+            src={`${PUBLIC_STRAPI_URL}${data.image1.url}`}
             alt="Student operating a cinema camera during an interview setup"
           >
         </div>
         <div class="film-card card-2">
           <img
             class="film-image"
-            src="/images/photos/working-together.webp"
+            src={`${PUBLIC_STRAPI_URL}${data.image2.url}`}
             alt="Mentor and students reviewing edits together at a workstation"
           >
         </div>
         <div class="film-card card-3">
           <img
             class="film-image"
-            src="/images/photos/sound-guy.webp"
+            src={`${PUBLIC_STRAPI_URL}${data.image3.url}`}
             alt="Student capturing clean audio with a boom microphone"
           >
         </div>

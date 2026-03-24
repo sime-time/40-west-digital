@@ -5,9 +5,12 @@
   import Mission from "$lib/components/Mission.svelte";
   import Partners from "$lib/components/Partners.svelte";
   import Portfolio from "$lib/components/Portfolio.svelte";
+  import type { PageProps } from "./$types";
+
+  let { data }: PageProps = $props();
 </script>
 
-<Hero />
+<Hero data={data.hero.data} />
 <Partners />
 <Portfolio />
 <Mission />
