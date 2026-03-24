@@ -8,6 +8,10 @@
   function toggleMenu() {
     isMobileMenuOpen = !isMobileMenuOpen;
   }
+
+  function closeMenu() {
+    isMobileMenuOpen = false;
+  }
 </script>
 
 <header class="navbar">
@@ -68,6 +72,7 @@
         <a
           href={navLink.href}
           class={navLink.isButton ? "btn-primary" : "mobile-link font-medium"}
+          onclick={closeMenu}
           >{navLink.label}</a
         >
       {/each}
