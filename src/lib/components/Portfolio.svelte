@@ -30,14 +30,10 @@
   let gridContainer: HTMLDivElement | null = null;
 
   const visibleVideos = $derived(
-    showAll
-      ? data.portfolioVideo
-      : data.portfolioVideo.slice(0, initialVisibleCount),
+    showAll ? videos : videos.slice(0, initialVisibleCount),
   );
 
-  const canToggleVideos = $derived(
-    data.portfolioVideo.length > initialVisibleCount,
-  );
+  const canToggleVideos = $derived(videos.length > initialVisibleCount);
 
   let selectedVideo = $state<PortfolioVideo | null>(null);
   let selectedEmbedUrl = $state<string | null>(null);
